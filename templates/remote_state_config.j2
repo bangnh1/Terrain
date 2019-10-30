@@ -1,0 +1,6 @@
+terraform {
+  backend "s3" {
+    {% for key, value in parseVar.items() %}
+        {{ key }} = "{{ value }}" {% endfor %}
+  }
+}

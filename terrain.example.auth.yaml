@@ -1,0 +1,29 @@
+---
+env:
+  terraform_path: '/usr/local/opt/terraform@0.11/bin/terraform'
+  region: ap-northeast-1
+  auth_method: profile
+  profile_file: '~/.aws/config'
+  profile_name: <<PROFILE_NAME>>
+resource:
+  - resource_name: main
+    resource_type: aws_instance
+    resource_id: <<AWS_INSTANCE_ID>>
+    output_path: ./test2/
+    remote_state_path: <<REMOTE_STATE_PATH>>/terraform.tfstate
+  - resource_name: main
+    resource_type: aws_security_group
+    resource_id: <<SECURITY_GROUP_ID>>
+    output_path: ./test2/
+    remote_state_path: <<REMOTE_STATE_PATH>>/terraform.tfstate
+  - resource_name: main
+    resource_type: aws_vpc
+    resource_id: <<VPC_ID>>
+    output_path: ./test2/
+    remote_state_path: <<REMOTE_STATE_PATH>>/terraform.tfstate
+remote_state:
+  bucket: <<BUCKET_NAME>>
+  region: ap-northeast-1
+  shared_credentials_file: '~/.aws/config'
+  profile: <<PROFILE_NAME>>
+  encrypt: "true"

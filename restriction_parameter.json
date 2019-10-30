@@ -1,0 +1,9 @@
+{
+    "restrictionParameter": [
+        "volume_id",
+        "availability_zone_id",
+        "ipv6_cidr_block_association_id",
+        "dns_name",
+        "ca_cert_identifier"
+    ]
+}
