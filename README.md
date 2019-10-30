@@ -24,13 +24,13 @@ pip install -r requirements.txt
 
 ## Download terraform provider aws:
 MacOSX:
-curl https://releases.hashicorp.com/terraform-provider-aws/2.33.0/terraform-provider-aws_2.33.0_darwin_amd64.zip
+curl https://releases.hashicorp.com/terraform-provider-aws/2.33.0/terraform-provider-aws_2.33.0_darwin_amd64.zip -o terraform-provider-aws_2.33.0_darwin_amd64.zip
 unzip terraform-provider-aws_2.33.0_darwin_amd64.zip
 mkdir -p .terraform/plugins/darwin_amd64
 cp terraform-provider-aws_v2.33.0_x4 .terraform/plugins/darwin_amd64/
 
 Linux:
-curl https://releases.hashicorp.com/terraform-provider-aws/2.33.0/terraform-provider-aws_2.33.0_linux_amd64.zip
+curl https://releases.hashicorp.com/terraform-provider-aws/2.33.0/terraform-provider-aws_2.33.0_linux_amd64.zip -o terraform-provider-aws_2.33.0_darwin_amd64.zip
 unzip terraform-provider-aws_2.33.0_linux_amd64.zip
 mkdir -p .terraform/plugins/linux_amd64
 cp terraform-provider-aws_v2.33.0_x4 .terraform/plugins/linux_amd64/
