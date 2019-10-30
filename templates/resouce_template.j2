@@ -1,0 +1,21 @@
+
+resource "{{ terrainData[0].resource_type }}" "{{ terrainData[0].resource_name }}" {
+    {% for key, value in terrainData[1].items() %}
+        {{ key }} = "{{ value }}" {% endfor %}
+    {% for key, value in terrainData[2].items() %}
+        {{ key }} = {{ value }} {% endfor %}
+    {% for key,value in terrainData[3].items() %}
+        {% for mapperKey, mapperValue in value.items() %}
+        {{ key }} = {
+            {% for nestedKey,nestedValue in mapperValue.items() %}
+                {{ nestedKey }} = "{{ nestedValue }}"{% endfor %}
+        }
+        {% endfor %}
+    {% endfor %}
+    {% for key, value in terrainData[4].items() %}
+        {{ key }} = {
+            {% for nestedKey,nestedValue in value.items() %}
+                '{{ nestedKey }}' = "{{ nestedValue }}"{% endfor %}
+        }
+    {% endfor %}
+}

@@ -1,0 +1,5 @@
+provider "aws" {
+  region     = "{{ parseVar.region }}"
+  shared_credentials_file = "{{ parseVar.profile_file }}"
+  profile                 = "{{ parseVar.profile_name }}"
+}
